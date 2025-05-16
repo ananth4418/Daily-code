@@ -1,0 +1,37 @@
+import java.util.*;
+
+class Solution {
+    // Function to reverse the string 
+    public void reverseString(Vector<Character> s) {
+        Stack<Character> stack = new Stack<>();
+
+        // Push characters onto the stack
+        for (char c : s) {
+            stack.push(c);
+        }
+
+        // Pop characters from the stack to reverse the string
+        for (int i = 0; i < s.size(); ++i) {
+            s.set(i, stack.pop());
+        }
+
+        return;
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        Vector<Character> str = 
+            new Vector<>(Arrays.asList('h', 'e', 'l', 'l', 'o'));
+
+        // Creating an instance of Solution class
+        Solution sol = new Solution();
+
+        // Function call to reverse the string
+        sol.reverseString(str);
+
+        for (char c : str) {
+            System.out.print(c);
+        }
+    }
+}
